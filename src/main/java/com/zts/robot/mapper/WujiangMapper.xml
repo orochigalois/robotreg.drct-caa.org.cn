@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zts.robot.mapper.MemberMapper" >
+  <resultMap id="BaseResultMap" type="com.zts.robot.pojo.Member" >
+    <id column="tmid" property="tmid" jdbcType="VARCHAR" />
+    <result column="roleflg" property="roleflg" jdbcType="VARCHAR" />
+    <result column="tmcode" property="tmcode" jdbcType="VARCHAR" />
+    <result column="tmname" property="tmname" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="VARCHAR" />
+    <result column="didtype" property="didtype" jdbcType="VARCHAR" />
+    <result column="did" property="did" jdbcType="VARCHAR" />
+    <result column="mid" property="mid" jdbcType="VARCHAR" />
+    <result column="birthday" property="birthday" jdbcType="VARCHAR" />
+    <result column="picurl" property="picurl" jdbcType="VARCHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="departname" property="departname" jdbcType="VARCHAR" />
+    <result column="school" property="school" jdbcType="VARCHAR" />
+    <result column="createdate" property="createdate" jdbcType="VARCHAR" />
+    <result column="createuid" property="createuid" jdbcType="VARCHAR" />
+    <result column="tmstatus" property="tmstatus" jdbcType="VARCHAR" />
+    <result column="upduid" property="upduid" jdbcType="VARCHAR" />
+    <result column="upddate" property="upddate" jdbcType="VARCHAR" />
+    <result column="ckstatus" property="ckstatus" jdbcType="VARCHAR" />
+    <result column="delflg" property="delflg" jdbcType="VARCHAR" />
+    <result column="folk" property="folk" jdbcType="VARCHAR" />
+    <result column="diningtype" property="diningtype" jdbcType="VARCHAR" />
+    <result column="disclaimerurl" property="disclaimerurl" jdbcType="VARCHAR" />
+    <result column="alreadyflg" property="alreadyflg" jdbcType="VARCHAR" />
+    <result column="badgeurl" property="badgeurl" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    tmid, roleflg, tmcode, tmname, sex, didtype, did, mid, birthday, picurl, email, phone, 
+    departname, school, createdate, createuid, tmstatus, upduid, upddate, ckstatus, delflg, 
+    folk, diningtype, disclaimerurl, alreadyflg, badgeurl
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from tm_member
+    where tmid = #{tmid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from tm_member
+    where tmid = #{tmid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.zts.robot.pojo.Member" >
+    insert into tm_member (tmid, roleflg, tmcode, 
+      tmname, sex, didtype, 
+      did, mid, birthday, 
+      picurl, email, phone, 
+      departname, school, createdate, 
+      createuid, tmstatus, upduid, 
+      upddate, ckstatus, delflg, 
+      folk, diningtype, disclaimerurl, 
+      alreadyflg, badgeurl)
+    values (#{tmid,jdbcType=VARCHAR}, #{roleflg,jdbcType=VARCHAR}, #{tmcode,jdbcType=VARCHAR}, 
+      #{tmname,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, #{didtype,jdbcType=VARCHAR}, 
+      #{did,jdbcType=VARCHAR}, #{mid,jdbcType=VARCHAR}, #{birthday,jdbcType=VARCHAR}, 
+      #{picurl,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
+      #{departname,jdbcType=VARCHAR}, #{school,jdbcType=VARCHAR}, #{createdate,jdbcType=VARCHAR}, 
+      #{createuid,jdbcType=VARCHAR}, #{tmstatus,jdbcType=VARCHAR}, #{upduid,jdbcType=VARCHAR}, 
+      #{upddate,jdbcType=VARCHAR}, #{ckstatus,jdbcType=VARCHAR}, #{delflg,jdbcType=VARCHAR}, 
+      #{folk,jdbcType=VARCHAR}, #{diningtype,jdbcType=VARCHAR}, #{disclaimerurl,jdbcType=VARCHAR}, 
+      #{alreadyflg,jdbcType=VARCHAR}, #{badgeurl,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zts.robot.pojo.Member" >
+    insert into tm_member
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="tmid != null" >
+        tmid,
+      </if>
+      <if test="roleflg != null" >
+        roleflg,
+      </if>
+      <if test="tmcode != null" >
+        tmcode,
+      </if>
+      <if test="tmname != null" >
+        tmname,
+      </if>
+      <if test="sex != null" >
+        sex,
+      </if>
+      <if test="didtype != null" >
+        didtype,
+      </if>
+      <if test="did != null" >
+        did,
+      </if>
+      <if test="mid != null" >
+        mid,
+      </if>
+      <if test="birthday != null" >
+        birthday,
+      </if>
+      <if test="picurl != null" >
+        picurl,
+      </if>
+      <if test="email != null" >
+        email,
+      </if>
+      <if test="phone != null" >
+        phone,
+      </if>
+      <if test="departname != null" >
+        departname,
+      </if>
+      <if test="school != null" >
+        school,
+      </if>
+      <if test="createdate != null" >
+        createdate,
+      </if>
+      <if test="createuid != null" >
+        createuid,
+      </if>
+      <if test="tmstatus != null" >
+        tmstatus,
+      </if>
+      <if test="upduid != null" >
+        upduid,
+      </if>
+      <if test="upddate != null" >
+        upddate,
+      </if>
+      <if test="ckstatus != null" >
+        ckstatus,
+      </if>
+      <if test="delflg != null" >
+        delflg,
+      </if>
+      <if test="folk != null" >
+        folk,
+      </if>
+      <if test="diningtype != null" >
+        diningtype,
+      </if>
+      <if test="disclaimerurl != null" >
+        disclaimerurl,
+      </if>
+      <if test="alreadyflg != null" >
+        alreadyflg,
+      </if>
+      <if test="badgeurl != null" >
+        badgeurl,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="tmid != null" >
+        #{tmid,jdbcType=VARCHAR},
+      </if>
+      <if test="roleflg != null" >
+        #{roleflg,jdbcType=VARCHAR},
+      </if>
+      <if test="tmcode != null" >
+        #{tmcode,jdbcType=VARCHAR},
+      </if>
+      <if test="tmname != null" >
+        #{tmname,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="didtype != null" >
+        #{didtype,jdbcType=VARCHAR},
+      </if>
+      <if test="did != null" >
+        #{did,jdbcType=VARCHAR},
+      </if>
+      <if test="mid != null" >
+        #{mid,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null" >
+        #{birthday,jdbcType=VARCHAR},
+      </if>
+      <if test="picurl != null" >
+        #{picurl,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="departname != null" >
+        #{departname,jdbcType=VARCHAR},
+      </if>
+      <if test="school != null" >
+        #{school,jdbcType=VARCHAR},
+      </if>
+      <if test="createdate != null" >
+        #{createdate,jdbcType=VARCHAR},
+      </if>
+      <if test="createuid != null" >
+        #{createuid,jdbcType=VARCHAR},
+      </if>
+      <if test="tmstatus != null" >
+        #{tmstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="upduid != null" >
+        #{upduid,jdbcType=VARCHAR},
+      </if>
+      <if test="upddate != null" >
+        #{upddate,jdbcType=VARCHAR},
+      </if>
+      <if test="ckstatus != null" >
+        #{ckstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="delflg != null" >
+        #{delflg,jdbcType=VARCHAR},
+      </if>
+      <if test="folk != null" >
+        #{folk,jdbcType=VARCHAR},
+      </if>
+      <if test="diningtype != null" >
+        #{diningtype,jdbcType=VARCHAR},
+      </if>
+      <if test="disclaimerurl != null" >
+        #{disclaimerurl,jdbcType=VARCHAR},
+      </if>
+      <if test="alreadyflg != null" >
+        #{alreadyflg,jdbcType=VARCHAR},
+      </if>
+      <if test="badgeurl != null" >
+        #{badgeurl,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zts.robot.pojo.Member" >
+    update tm_member
+    <set >
+      <if test="roleflg != null" >
+        roleflg = #{roleflg,jdbcType=VARCHAR},
+      </if>
+      <if test="tmcode != null" >
+        tmcode = #{tmcode,jdbcType=VARCHAR},
+      </if>
+      <if test="tmname != null" >
+        tmname = #{tmname,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="didtype != null" >
+        didtype = #{didtype,jdbcType=VARCHAR},
+      </if>
+      <if test="did != null" >
+        did = #{did,jdbcType=VARCHAR},
+      </if>
+      <if test="mid != null" >
+        mid = #{mid,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null" >
+        birthday = #{birthday,jdbcType=VARCHAR},
+      </if>
+      <if test="picurl != null" >
+        picurl = #{picurl,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="departname != null" >
+        departname = #{departname,jdbcType=VARCHAR},
+      </if>
+      <if test="school != null" >
+        school = #{school,jdbcType=VARCHAR},
+      </if>
+      <if test="createdate != null" >
+        createdate = #{createdate,jdbcType=VARCHAR},
+      </if>
+      <if test="createuid != null" >
+        createuid = #{createuid,jdbcType=VARCHAR},
+      </if>
+      <if test="tmstatus != null" >
+        tmstatus = #{tmstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="upduid != null" >
+        upduid = #{upduid,jdbcType=VARCHAR},
+      </if>
+      <if test="upddate != null" >
+        upddate = #{upddate,jdbcType=VARCHAR},
+      </if>
+      <if test="ckstatus != null" >
+        ckstatus = #{ckstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="delflg != null" >
+        delflg = #{delflg,jdbcType=VARCHAR},
+      </if>
+      <if test="folk != null" >
+        folk = #{folk,jdbcType=VARCHAR},
+      </if>
+      <if test="diningtype != null" >
+        diningtype = #{diningtype,jdbcType=VARCHAR},
+      </if>
+      <if test="disclaimerurl != null" >
+        disclaimerurl = #{disclaimerurl,jdbcType=VARCHAR},
+      </if>
+      <if test="alreadyflg != null" >
+        alreadyflg = #{alreadyflg,jdbcType=VARCHAR},
+      </if>
+      <if test="badgeurl != null" >
+        badgeurl = #{badgeurl,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where tmid = #{tmid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zts.robot.pojo.Member" >
+    update tm_member
+    set roleflg = #{roleflg,jdbcType=VARCHAR},
+      tmcode = #{tmcode,jdbcType=VARCHAR},
+      tmname = #{tmname,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=VARCHAR},
+      didtype = #{didtype,jdbcType=VARCHAR},
+      did = #{did,jdbcType=VARCHAR},
+      mid = #{mid,jdbcType=VARCHAR},
+      birthday = #{birthday,jdbcType=VARCHAR},
+      picurl = #{picurl,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      departname = #{departname,jdbcType=VARCHAR},
+      school = #{school,jdbcType=VARCHAR},
+      createdate = #{createdate,jdbcType=VARCHAR},
+      createuid = #{createuid,jdbcType=VARCHAR},
+      tmstatus = #{tmstatus,jdbcType=VARCHAR},
+      upduid = #{upduid,jdbcType=VARCHAR},
+      upddate = #{upddate,jdbcType=VARCHAR},
+      ckstatus = #{ckstatus,jdbcType=VARCHAR},
+      delflg = #{delflg,jdbcType=VARCHAR},
+      folk = #{folk,jdbcType=VARCHAR},
+      diningtype = #{diningtype,jdbcType=VARCHAR},
+      disclaimerurl = #{disclaimerurl,jdbcType=VARCHAR},
+      alreadyflg = #{alreadyflg,jdbcType=VARCHAR},
+      badgeurl = #{badgeurl,jdbcType=VARCHAR}
+    where tmid = #{tmid,jdbcType=VARCHAR}
+  </update>
+</mapper>

@@ -26,6 +26,26 @@ import com.itextpdf.text.pdf.PdfStamper;
 public class PdfModeForPdf {
 	public static void formFdfModeForPdf(Map<String, String> dataParamMap, String savePdfPath,
 			String wordModelPathCup) throws DocumentException, IOException {
+		String fileName = "/root/ROOT/staticrobot/zip/测试123456.txt";
+        String content = "Hello, this is a 测试";
+
+        try {
+            // Create a FileOutputStream for the specified file
+            FileOutputStream fos = new FileOutputStream(fileName);
+
+            // Convert the content to bytes and write it to the file
+            byte[] bytes = content.getBytes();
+            fos.write(bytes);
+
+            // Close the FileOutputStream
+            fos.close();
+
+            System.out.println("File created and content written successfully.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+        
 		
 		BaseFont simheiChinese = BaseFont.createFont(MyProperties.getKey("simhei"),BaseFont.IDENTITY_H,BaseFont.EMBEDDED);
 		

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Expires" content="0">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-control" content="no-cache">
+    <title>中国自动化学会机器人竞赛报名系统</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/BMS-Left.css" rel="stylesheet">
+    <link href="../css/BMS-Top.css" rel="stylesheet">
+    <link href="../css/layerMsg.css" rel="stylesheet">
+    <link href="../css/BMS-playerList.css" rel="stylesheet">
+    <link href="../css/mricode.pagination.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container-fluid">
+    	<div id="left">
+    		<div class="sidebar">
+	    		<div class="sidebar-icon">
+	    			<img src="../images/icon_land_caa.png">
+	    		</div>
+	    		<ul class="sidebar-ul">
+	    		<!-- 	<li class="matchInfo-li"><a href="BMS-matchInfo.html" target="_self">赛事信息</a></li> -->
+	    			<li class="eventManage-li"><a href="BMS-competitionList.html" target="_self">赛项管理</a></li>
+	    			<li class="teamManage-li"><a href="BMS-teamList.html" target="_self">队伍管理</a></li>
+	    			<li class="players-li active"><a href="BMS-playerList.html" target="_self">参赛人员</a></li>
+	    			<li class="userManage-li"><a href="BMS-userManage.html" target="_self">用户管理</a></li>
+	    			<li><a href="BMS-statistics.html" target="_self">数据统计</a></li>
+	    			<li><a href="BMS-export.html" target="_self">数据导出</a></li>
+					<li><a href="BMS-gradeManage.html" target="_self">成绩管理</a></li>
+					<li><a href="BMS-allpayorder.html" target="_self">缴费管理</a></li>
+<li><a href="crud.html" target="_self">CRUD</a></li>
+	    		</ul>
+    		</div>
+    	</div>
+    	<div class="rightpart">
+    		<div class="contentwrap">
+    			<div class="searchbox">
+    				<h1 class="searchtitle">搜索查询</h1>
+    				<ul class="searchul clearfix">
+    					<li>
+    						<span class="infoname">个人信息：</span>
+    						<input type="text" class="searchinput" placeholder="姓名/邮箱/手机" id="str">	
+    					</li>
+    					<li>
+    						<span class="infoname">性别：</span>
+    						<input type="text" class="searchinput selinput" readonly placeholder="请选择" id="searchsex" altvalue="">
+    						<ul class="emulate">
+    							<li altvalue="01">男</li>
+    							<li altvalue="02">女</li>
+    						</ul>	
+    					</li>
+						<li>
+    						<span class="infoname">国别：</span>
+    						<input type="text" class="searchinput selinput" readonly placeholder="请选择" id="searchcountry" altvalue="">
+    						<ul class="emulate">
+    							<li altvalue="01">魏</li>
+    							<li altvalue="02">蜀</li>
+    							<li altvalue="03">吴</li>
+    						</ul>	
+    					</li>
+    					
+    				</ul>
+    				<div class="btnwrap">
+    					<a class="clear" onclick="clearSearch()">清空搜索</a>
+    					<a class="search" onclick="getAllMem(0)">立即搜索</a>
+    				</div>
+    			</div>
+    			<div class="listbox">
+    				<div class="tablehead">
+    					<p class="current"></p>
+    					<!-- <a class="export" onclick="exportPlayer()">导出</a> -->
+    				</div>
+    				<div class="tablewrap">
+    					<table>
+		    				<thead>
+		    					<tr>
+		    						<td style="width:115px">姓名</td>
+			    					<td style="width:42px">性别</td>
+			    					<td style="width:70px">国别</td>
+			    					<td>操作</td>
+		    					</tr>
+		    				</thead>
+		    				<tbody>
+		    					
+		    				</tbody>
+		    			</table>
+		    			<div class="m-pagination" id="page"></div>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+   
+    <script src="../static/js/jquery-3.2.1.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/jquery.form.js"></script>
+    <script src="../static/js/mricode.pagination.js"></script>
+    <script src="../static/js/layer/laydate.js"></script>
+    <script src="../js/layerMsg.js"></script>
+    <script src="../json/sys_folk.js"></script>
+    <script src="../js/BMS-wujiang.js"></script>
+  </body>
+</html>
